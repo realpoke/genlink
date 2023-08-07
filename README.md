@@ -1,98 +1,45 @@
-# Project Template Guide
+# GenLink
 
-Welcome to the Tallest template repository! This template is designed to help you kick-start your own projects based on my setup.
+GenLink is a powerful software tool designed to enhance your Command & Conquer: General's Zero Hour gaming experience by seamlessly integrating with GenRanks and GenTools. With GenLink, you can effortlessly upload your game data to the GenRanks leaderboard, as well as claim and manage your accounts from GenTools. Plus, GenLink features automatic updates to ensure you always have the latest features and improvements.
 
-TALL based template to make a website, including FilamentPHP as an admin panel.
+## Features
 
-**TailwindCSS, AlpineJS, Laravel, Livewire, FilamentPHP**
+- **Instant Game Data Sync:** GenLink enables you to instantly synchronize your game data with the GenRanks leaderboard, ensuring your achievements are accurately recorded in real-time.
+
+- **Effortless Account Management:** Easily claim, configure, and manage your GenTools accounts using the intuitive interface provided by GenLink.
+
+- **Auto-Updates:** GenLink features automatic updates, so you'll always have access to the latest enhancements and features without manual intervention.
+
+- **User-Friendly Interface:** GenLink boasts a user-friendly and intuitive interface, making it accessible for players of all skill levels.
 
 ## Getting Started
 
-To use this template and create your own project, follow these steps:
+To get started with GenLink, follow these simple steps:
 
-1. Click the "Use this template" button at the top of the repository. You'll be prompted to create a new repository based on this template.
+1. **Download:** Clone this repository to your local machine or download the latest release from the [Releases](https://github.com/realpoke/genlink/releases) page.
 
-2. Choose a name for your new repository and customize the repository details as needed.
+2. **Installation:** Install GenLink on your computer by running the installer.
 
-3. Clone your newly created repository to your local machine using Git:
+3. **Login:** Launch GenLink and log in using your GenRanks credentials.
 
-   ```sh
-   git clone https://github.com/your-username/your-repository.git
-   ```
-4. Navigate to the project directory:
-    ```sh
-    cd your-repository
-    ```
-5. Customize the project files, configuration, and content according to your needs. You can modify or add new files, update the README, and configure any settings.
+4. **Sync Game Data:** Start playing Command & Conquer: General's Zero Hour, and GenLink will automatically sync your game data to the GenRanks leaderboard.
 
-6. Commit your changes:
-    ```sh
-    git add .
-    git commit -m "Initial customization"
-    git push origin main
-    ```
+5. **Account Management:** Use GenLink to claim, configure, and manage your GenTools accounts seamlessly.
 
-7. Start developing your project! You're now ready to build upon the template and create your unique application.
+## System Requirements
 
-## Programming
-This is a quick start guide!
-
-### Software
-* PHP
-* Composer
-* Yarn / NPM
-* A database
-* GIT
-
-### Databases
-MariaDB 10.3+, MySQL 5.7+, PostgreSQL 10.0+, SQLite 3.8.8+, SQL Server 2017+
-
-### Setup
-After doing the following steps, you should be setup and ready to develop locally.
-1. Download the repo locally.
-2. Copy the `.env.example` into `.env`
-3. Fill in the `.env` file so that it fits your local development environment.
-4. Make sure to link the storage to public using `php artisan storage:link`.
-5. Get node packages with either `yarn` or the NPM equivalent.
-6. Run composer with `composer install` to set up all PHP packages
-7. Make sure your database is running.
-8. Run database migrations with `php artisan migrate`.
-9. Start your website `php artisan serve`, and go to the URL shown.
-
-## Tallest documentation
-
-Here you find the documentation resources for the Tallest stack.
-
-**TailwindCSS, AlpineJS, Laravel, Livewire, FilamentPHP**
-
-1. **Tailwind CSS:** _v3_
-   - [Official Documentation](https://tailwindcss.com/docs)
-   - [Tailwind CSS GitHub Repository](https://github.com/tailwindcss/tailwindcss)
-
-2. **Alpine.js:** _v3_
-   - [Official Documentation](https://alpinejs.dev/start-here)
-   - [Alpine.js GitHub Repository](https://github.com/alpinejs/alpine)
-
-3. **Laravel:** _v10_
-   - [Official Documentation](https://laravel.com/docs)
-   - [Laravel GitHub Repository](https://github.com/laravel/laravel)
-
-4. **Livewire:** _v3_
-   - [Official Documentation](https://livewire.laravel.com/docs/)
-   - [Livewire GitHub Repository](https://github.com/livewire/livewire)
-
-5. **FilamentPHP:** _v3_
-   - [Official Documentation](https://filamentphp.com/docs)
-   - [FilamentPHP GitHub Repository](https://github.com/filamentphp/filament)
-
-These resources provide comprehensive guides, tutorials, and references for each technology in the Tallest stack. Feel free to explore and leverage these tools to build powerful and dynamic web applications.
+- Operating System: Windows 7 or later
+- Command & Conquer: General's Zero Hour installed
+- GenRanks account
 
 ## Feedback and Support
 
-If you encounter any issues or have questions, feel free to open an [issue](https://github.com/realpoke/tallest/issues) on this repository.
-
-I hope this template helps you get started on your project. Happy coding!
+If you encounter any issues or have questions, feel free to open an [issue](https://github.com/realpoke/genlink/issues) on this repository.
 
 ## License
 
 This project is licensed under the [MIT license](https://opensource.org/licenses/MIT) - see the LICENSE file for details.
+
+---
+
+**Note:** GenLink is not affiliated with or endorsed by Electronic Arts Inc. or any of its subsidiaries.
