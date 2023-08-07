@@ -12,6 +12,15 @@ GenLink is a powerful software tool designed to enhance your Command & Conquer: 
 
 - **User-Friendly Interface:** GenLink boasts a user-friendly and intuitive interface, making it accessible for players of all skill levels.
 
+## Known Issues
+
+### Issue: PHP Embedded File Execution
+
+There is a known issue that affects the correct execution of the embedded PHP file when using `php artisan native:serve`. This issue arises due to a platform detection problem in the Electron build process. 
+
+### Temporary Fix:
+To address this issue temporarily, follow the fix on this [commit](https://github.com/NativePHP/electron/commit/4b316176fdacf1c499d8cf30368f793e420a6712).
+
 ## Getting Started
 
 To get started with GenLink, follow these simple steps:
