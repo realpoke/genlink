@@ -1,8 +1,7 @@
 <div>
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <a href="{{ route('home') }}"
-                class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                 <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
                     alt="logo">
                 Flowbite
@@ -26,17 +25,13 @@
                             <x-inputs.error for="form.password" />
                         </div>
                         <div class="flex justify-between">
-                            <x-inputs.checkbox wire:model.live="form.remember" for="form.remember">
-                                Remember me
-                            </x-inputs.checkbox>
-                            <x-inputs.error for="form.remember" />
-                            <a wire:navigate href="{{ route('password.request') }}"
+                            <a href="#"
                                 class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">Forgot
                                 password?</a>
                         </div>
                         <x-buttons.main class="w-full">Sign in</x-buttons.main>
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                            Don’t have an account yet? <a wire:navigate href="{{ route('register') }}"
+                            Don’t have an account yet? <a href="#"
                                 class="font-medium text-blue-600 hover:underline dark:text-blue-500">Sign up</a>
                         </p>
                     </form>

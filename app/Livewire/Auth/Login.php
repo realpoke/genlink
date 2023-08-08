@@ -21,7 +21,7 @@ class Login extends Component
         $this->limitTo(10, 'form.email', 'log in');
 
         if ($authenticator->authenticate($this->form)) {
-            return redirect()->intended(route('home'));
+            return redirect()->route('home');
         }
 
         $this->addError('form.email', __('auth.failed'));

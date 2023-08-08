@@ -1,9 +1,6 @@
 <?php
 
-use App\Livewire\Landing;
-use App\Livewire\Markdown;
-use App\Livewire\Option;
-use App\Livewire\Profile;
+use App\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Landing::class)->name('home');
-
-Route::get('/doc/{markdown}', Markdown::class)->name('markdown.show');
-
-Route::get('/profile/{user}', Profile::class)->name('profile.show');
-Route::middleware(['auth'])->group(function () {
-    Route::get('/options', Option::class)->name('options.create');
+Route::middleware('auth.bearer')->group(function () {
+    Route::get('/', Home::class)->name('home');
 });

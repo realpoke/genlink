@@ -13,14 +13,11 @@ class LoginForm extends Form
 
     public string $password = '';
 
-    public bool $remember = false;
-
     public function rules(): array
     {
         return [
             'email' => AuthRules::loginKeyRules(),
             'password' => AuthRules::loginPasswordRules(),
-            'remember' => AuthRules::loginRememberRules(),
         ];
     }
 }
