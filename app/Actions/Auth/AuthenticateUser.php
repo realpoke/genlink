@@ -7,6 +7,7 @@ use App\Livewire\Forms\Auth\LoginForm;
 use App\Traits\withLimits;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Native\Laravel\Facades\MenuBar;
 use Native\Laravel\Facades\Notification;
 
 class AuthenticateUser implements AuthenticatesUserContract
@@ -35,6 +36,8 @@ class AuthenticateUser implements AuthenticatesUserContract
         Notification::title('Login')
             ->message('Welcome back '.$response->json('data.me.nickname').'!')
             ->show();
+
+        MenuBar::label('Status: Online');
 
         return true;
     }

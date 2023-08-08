@@ -6,6 +6,7 @@ use App\Contracts\Auth\LogoutUserContract;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
+use Native\Laravel\Facades\MenuBar;
 
 class LogoutUser implements LogoutUserContract
 {
@@ -27,5 +28,7 @@ class LogoutUser implements LogoutUserContract
 
         Session::forget('user');
         Cache::forget('bearer_token');
+
+        MenuBar::label('');
     }
 }

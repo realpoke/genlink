@@ -29,6 +29,7 @@ class UploadNewReplay extends Command
      */
     public function handle()
     {
+        // TODO: Make action
         $this->info('Running replay uploader.');
         // TODO: Try to locate the replay folder and if it fails ask user to point to it.
         $disk = Storage::disk('local'); // TODO: Use correct document disk and path
