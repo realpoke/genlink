@@ -15,7 +15,7 @@
                     <form wire:submit="login" class="space-y-4 md:space-y-6">
                         <div>
                             <x-inputs.label for="form.email">Your email</x-inputs.label>
-                            <x-inputs.text wire:model="form.email" name="form.email" id="form.email" />
+                            <x-inputs.text wire:model="form.email" name="form.email" id="form.email" autofocus />
                             <x-inputs.error for="form.email" />
                         </div>
                         <div>

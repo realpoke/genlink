@@ -12,14 +12,14 @@
             </div>
 
             <div class="hidden space-x-4 sm:flex sm:items-center sm:ml-6">
-                @hasUser
+                @hasuser
                     <!-- Options Dropdown -->
                     <div class="relative ml-3">
                         <x-menus.dropdown align="right" width="48">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <x-buttons.invisible class="inline-flex">
-                                        {{ session('user.name') }}
+                                        {{ session('user.nickname') }}
 
                                         <x-icons icon='chevron-down' class="ml-1" />
                                     </x-buttons.invisible>
@@ -69,10 +69,10 @@
 
         <!-- Responsive Options Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-            @hasUser
+            @hasuser
                 <div class="flex items-center justify-between px-4">
                     <div>
-                        <div class="text-base font-medium text-gray-800 dark:text-gray-200">{{ session('user.name') }}
+                        <div class="text-base font-medium text-gray-800 dark:text-gray-200">{{ session('user.nickname') }}
                         </div>
                         <div class="text-sm font-medium text-gray-500">{{ session('user.email') }}</div>
                     </div>
