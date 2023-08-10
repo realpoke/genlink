@@ -42,6 +42,17 @@ class UploadNewReplay extends Command
             return false;
         }
 
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer '.Cache::get('bearer_token'),
+            'Accept' => 'application/json',
+        ])->timeout(3)->get(config('api.url').'/me');
+
+        if (! $response->successful()) {
+            $this->info('Failed to use token.');
+
+            return;
+        }
+
         $lastModifiedTime = $disk->lastModified($file);
         $previousLastModifiedTime = Cache::get('replay_file', false);
         Cache::put('replay_file', $lastModifiedTime);

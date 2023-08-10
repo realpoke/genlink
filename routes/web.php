@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Home;
+use App\Livewire\Loading;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth.bearer')->group(function () {
-    Route::get('/', Home::class)->name('home');
-});
+Route::get('/loading', Loading::class)
+    ->name('loading');
+
+Route::get('/', Home::class)
+    ->middleware('check')
+    ->name('home');

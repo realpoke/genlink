@@ -15,10 +15,13 @@ class LogoutUser implements LogoutUserContract
         $bearerToken = Cache::get('bearer_token');
 
         if ($bearerToken) {
-            Http::withHeaders([
-                'Authorization' => 'Bearer '.$bearerToken,
-                'Accept' => 'application/json',
-            ])->post(config('api.url').'/logout');
+            try {
+                Http::withHeaders([
+                    'Authorization' => 'Bearer '.$bearerToken,
+                    'Accept' => 'application/json',
+                ])->post(config('api.url').'/logout');
+            } catch (\Throwable $th) {
+            }
         }
 
         if (request()->hasSession()) {

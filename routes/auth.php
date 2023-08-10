@@ -15,4 +15,5 @@ use App\Livewire\Auth\Login;
 
 // TODO: Make custom guest middleware
 Route::get('login', Login::class)
+    ->middleware('check')
     ->name('login');
