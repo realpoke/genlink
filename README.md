@@ -21,6 +21,13 @@ There is a known issue that affects the correct execution of the embedded PHP fi
 ### Temporary Fix:
 To address this issue temporarily, follow the fix on this [commit](https://github.com/NativePHP/electron/commit/4b316176fdacf1c499d8cf30368f793e420a6712).
 
+### Issue: Filesystem missing
+
+The `v0.3.0` release of the electron-plugin lacks the necessary environment variables for PHP functionality. Unfortunately, these variables are only properly configured in the main branch of the plugin.
+
+### Temporary Fix:
+Replace the existing `php.js` files in the plugin's distribution (`dist`) with a custom version that includes the required environment variable settings for PHP. This temporary fix will allow you to continue using the plugin with the desired functionality until an official solution becomes available.
+
 ## Getting Started
 
 To get started with GenLink, follow these simple steps:
