@@ -32,11 +32,11 @@ class UploadNewReplay extends Command
         // TODO: Make action
         $this->info('Running replay uploader.');
         // TODO: Try to locate the replay folder and if it fails ask user to point to it.
-        $disk = Storage::disk('local'); // TODO: Use correct document disk and path
+        $disk = Storage::disk('documents');
         $bearerToken = Cache::get('bearer_token', false);
-        $file = '00000000.rep';
+        $filePath = implode(DIRECTORY_SEPARATOR, ['Command and Conquer Generals Zero Hour Data', 'Replays', '00000000.rep']);
 
-        if (! $bearerToken || ! $disk->fileExists($file)) {
+        if (! $bearerToken || ! $disk->fileExists($filePath)) {
             $this->info('Failed to find file or token.');
 
             return false;
@@ -50,10 +50,10 @@ class UploadNewReplay extends Command
         if (! $response->successful()) {
             $this->info('Failed to use token.');
 
-            return;
+            return false;
         }
 
-        $lastModifiedTime = $disk->lastModified($file);
+        $lastModifiedTime = $disk->lastModified($filePath);
         $previousLastModifiedTime = Cache::get('replay_file', false);
         Cache::put('replay_file', $lastModifiedTime);
 
@@ -62,7 +62,7 @@ class UploadNewReplay extends Command
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer '.$bearerToken,
                 'Accept' => 'application/json',
-            ])->attach('file', $disk->get($file), $file)
+            ])->attach('file', $disk->get($filePath), $filePath)
                 ->post(config('api.url').'/upload/game');
 
             $this->info('Upload response: '.$response->json('message'));
