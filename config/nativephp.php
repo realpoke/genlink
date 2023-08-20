@@ -16,6 +16,22 @@ return [
     'app_id' => env('NATIVEPHP_APP_ID'),
 
     /**
+     * A list of environment keys that should be removed from the
+     * .env file when the application is bundled for production.
+     * You may use wildcards to match multiple keys.
+     */
+    
+    'cleanup_env_keys' => [
+        'AWS_*',
+        'DO_SPACES_*',
+        '*_SECRET',
+        'NATIVEPHP_UPDATER_PATH',
+        'NATIVEPHP_APPLE_ID',
+        'NATIVEPHP_APPLE_ID_PASS',
+        'NATIVEPHP_APPLE_TEAM_ID',
+    ],
+
+    /**
      * If your application allows deep linking, you can specify the scheme
      * to use here. This is the scheme that will be used to open your
      * application from within other applications.
