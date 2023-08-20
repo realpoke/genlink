@@ -20,11 +20,11 @@ return [
      * .env file when the application is bundled for production.
      * You may use wildcards to match multiple keys.
      */
-    
     'cleanup_env_keys' => [
         'AWS_*',
         'DO_SPACES_*',
         '*_SECRET',
+        'GH_*',
         'NATIVEPHP_UPDATER_PATH',
         'NATIVEPHP_APPLE_ID',
         'NATIVEPHP_APPLE_ID_PASS',
