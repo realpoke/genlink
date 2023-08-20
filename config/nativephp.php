@@ -90,6 +90,18 @@ return [
                 'region' => env('DO_SPACES_REGION'),
                 'path' => env('NATIVEPHP_UPDATER_PATH', null),
             ],
+
+            'github' => [
+                'driver' => 'github',
+                'owner' => env('GH_OWNER'),
+                'repo' => env('GH_REPO'),
+                'vPrefixedTagName' => env('GH_VERSION_PREFIX', false),
+                'private' => env('GH_PRIVATE', false),
+                'channel' => env('GH_CHANNEL'),
+                'releaseType' => env('GH_RELEASE_TYPE'),
+                'token' => env('GH_TOKEN'),
+                'path' => env('NATIVEPHP_UPDATER_PATH', null),
+            ],
         ],
     ],
 ];
