@@ -12,6 +12,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
+        "nativephp/electron": "^0.6.3",
         "spatie/laravel-permission": "^6.4"
     },
     "require-dev": {

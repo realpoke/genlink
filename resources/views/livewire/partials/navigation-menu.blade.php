@@ -12,14 +12,14 @@
             </div>
 
             <div class="hidden space-x-4 sm:flex sm:items-center sm:ml-6">
-                @auth
+                @hasuser
                     <!-- Options Dropdown -->
                     <div class="relative ml-3">
                         <x-menus.dropdown align="right" width="48">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <x-buttons.invisible class="inline-flex">
-                                        {{ $name }}
+                                        {{ session('user.name') }}
 
                                         <x-icons icon='chevron-down' class="ml-1" />
                                     </x-buttons.invisible>
@@ -28,27 +28,6 @@
 
 
                             <x-slot name="content">
-                                <x-menus.dropdown-link wire:navigate href="{{ Auth::user()->route() }}">
-                                    {{ __('Profile') }}
-                                </x-menus.dropdown-link>
-
-                                @can('viewAny:filament')
-                                    <x-menus.dropdown-link href="{{ route('filament.admin.pages.dashboard') }}">
-                                        {{ __('Admin') }}
-                                    </x-menus.dropdown-link>
-                                @endcan
-
-                                <!-- Account Management -->
-                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                    {{ __('Manage Account') }}
-                                </div>
-
-                                <x-menus.dropdown-link wire:navigate href="{{ route('options.create') }}">
-                                    {{ __('Options') }}
-                                </x-menus.dropdown-link>
-
-                                <div class="border-t border-gray-200 dark:border-gray-600"></div>
-
                                 <!-- Authentication -->
                                 <x-menus.dropdown-link class="cursor-pointer" wire:click="logout">
                                     {{ __('Log Out') }}
@@ -61,12 +40,7 @@
                         Log in
                         <x-icons class="ml-2" icon="log-in" />
                     </x-buttons.invisible-link>
-
-                    <x-buttons.invisible-link class="inline-flex" wire:navigate href="{{ route('register') }}">
-                        Register
-                        <x-icons class="ml-2" icon="user-plus" />
-                    </x-buttons.invisible-link>
-                @endauth
+                @endhasuser
             </div>
 
             <!-- Hamburger -->
@@ -95,31 +69,16 @@
 
         <!-- Responsive Options Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-            @auth
+            @hasuser
                 <div class="flex items-center justify-between px-4">
                     <div>
-                        <div class="text-base font-medium text-gray-800 dark:text-gray-200">{{ $name }}
+                        <div class="text-base font-medium text-gray-800 dark:text-gray-200">{{ session('user.name') }}
                         </div>
-                        <div class="text-sm font-medium text-gray-500">{{ $email }}</div>
+                        <div class="text-sm font-medium text-gray-500">{{ session('user.email') }}</div>
                     </div>
                 </div>
 
                 <div class="mt-3 space-y-1">
-                    <x-navbars.responsive-nav-link wire:navigate href="{{ Auth::user()->route() }}" :active="request()->routeIs(Auth::user()->route())">
-                        {{ __('Profile') }}
-                    </x-navbars.responsive-nav-link>
-
-                    @can('viewAny:filament')
-                        <x-navbars.responsive-nav-link href="{{ route('filament.admin.pages.dashboard') }}">
-                            {{ __('Admin') }}
-                        </x-navbars.responsive-nav-link>
-                    @endcan
-
-                    <!-- Account Management -->
-                    <x-navbars.responsive-nav-link wire:navigate href="{{ route('options.create') }}" :active="request()->routeIs('options.create')">
-                        {{ __('Options') }}
-                    </x-navbars.responsive-nav-link>
-
                     <!-- Authentication -->
                     <x-navbars.responsive-nav-link wire:click="logout">
                         {{ __('Log Out') }}
@@ -131,7 +90,7 @@
                         {{ __('Login') }}
                     </x-navbars.responsive-nav-link>
                 </div>
-            @endauth
+            @endhasuser
         </div>
     </div>
 </nav>

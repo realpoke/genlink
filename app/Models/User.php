@@ -4,16 +4,13 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, HasRoles, Notifiable;
+    use HasFactory, Notifiable;
 
     private static $defaultRole = 'user';
 
@@ -49,24 +46,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::created(function ($user) {
-            $user->assignRole($user->defaultRole);
-        });
-    }
-
-    public function route(): string
-    {
-        return route('profile.show', ['user' => $this]);
-    }
-
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return $this->can('viewAny:filament');
     }
 }
